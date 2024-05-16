@@ -10,6 +10,8 @@ This OpenFOAM utility computes a risk map using a non-dimensional velocity, alph
 ## How to use the utility
 
 - Arrange the results of various wind directions .or. time results (either way its a risk over time/direction that is averaged) into different directories in serial `1`,`2`,`3`, so on ...
+- Choose the right parameters in `flowProperties` and place this file in `constant`
+- Make sure deltaT, startTime, endTime are set according to the way the results are arranged so each timestep is one snapshot
 - Run `riskMap`
 
 ### This code was written listening to the wonderful album `Àmr` by Ihsahn
