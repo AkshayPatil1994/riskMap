@@ -1,4 +1,14 @@
+// Decide if the multiplication factor is unity or not
+if(windRoseWeight.value() == 1)
+{
+    multiplicationFactor  = windRoseData[totalIterations];
+}
+
 volScalarField magU = mag(U);
+// Sum the Uavg
+Uavg = Uavg + multiplicationFactor*magU;
+// Sum the kavg
+kavg = kavg + multiplicationFactor*k;
 
 // Loop over all the elements and check if the value is larger than given parameters
 forAll(risk, cellID)

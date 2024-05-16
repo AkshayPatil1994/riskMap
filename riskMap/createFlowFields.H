@@ -28,6 +28,35 @@ volScalarField P_risk
     dimensionedScalar("P_risk", dimensionSet(0,0,0,0,0,0,0), 0.0)
 );
 
+// Define unitless scalar as Uavg (not important to have units here)
+volScalarField Uavg
+(
+    IOobject
+    (
+        "Uavg",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh,
+    dimensionedScalar("Uavg", dimensionSet(0,1,-1,0,0,0,0), 0.0)
+);
+
+volScalarField kavg
+(
+    IOobject
+    (
+        "kavg",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh,
+    dimensionedScalar("kavg", dimensionSet(0,2,-2,0,0,0,0), 0.0)
+);
+
 Info<< "Reading flowProperties\n" << endl;
 
 IOdictionary flowProperties
@@ -63,4 +92,9 @@ dimensionedScalar beta
       flowProperties
 );
 
-
+dimensionedScalar windRoseWeight
+(
+    "windRoseWeight",
+    dimensionSet(0, 0, 0, 0, 0, 0, 0),
+    flowProperties
+);

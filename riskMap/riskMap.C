@@ -28,6 +28,9 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
+#include <iostream>
+#include <fstream>
+#include <vector>
 #include "fvCFD.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -39,8 +42,21 @@ int main(int argc, char *argv[])
     #include "createMesh.H"
     #include "createFlowFields.H"
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    
+    float multiplicationFactor = 1.0;
 
     Info << nl << "Risk values used are alpha: " << alpha.value() << " beta: " << beta.value() << nl << endl;
+    
+    // Declare windRoseData to be accessible everywhere
+    std::vector<float> windRoseData;
+    float number;
+    // Read wind rose data file if user requests
+    if(windRoseWeight.value() == 1)
+    {
+        #include "readWindRose.H"
+        Info << "Size of the windrose.dat: " << windRoseData.size() << " items"<< nl << endl;
+    }
+
     int totalIterations = 0;
 
     for (runTime; !runTime.end(); runTime++)
@@ -56,9 +72,18 @@ int main(int argc, char *argv[])
     }
 
     // Now compute the average and divide it by the total number of samples
+    Info << "Writing P_risk to file" << nl << endl;
     P_risk = P_risk/totalIterations;
     P_risk.write();
-
+    Info << "Writing Uavg to file" << nl << endl;
+    if(windRoseWeight.value() != 1)
+    {
+        Uavg = Uavg/totalIterations;
+        kavg = kavg/totalIterations;
+    }
+    Uavg.write();
+    Info << "Writing kavg to file" << nl << endl;
+    kavg.write();
     // Output Time information to screen
     Info<< nl << "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
         << "  ClockTime = " << runTime.elapsedClockTime() << " s"
