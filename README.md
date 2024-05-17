@@ -23,4 +23,11 @@ This OpenFOAM utility computes a risk map using a non-dimensional velocity, alph
 - Run the `riskMap` utility and the results will be stored in `endTime + deltaT` directory.
 - Example, each directory will have its own binary risk map while the averaged risk ($\mathcal{P}_r$), wind-rose averaged velocity ($\overline{U}_a$) and TKE ($\overline{k}_a$) will be stored in a directory `365` when using an angular resolution of $\Delta \theta = 5^{\circ}$.
 
+
+<center><img src="riskFoam.png" height=400></center>
+
+<center> 
+Figure: Results that can be obtained using this utility which are paraview compatible through the OpenFOAM filetype natively. Here the directionally averaged risk is shown at 10m height with red marking high risk and blue marking low risk regions.
+</center>
+
 ### This code was written listening to the wonderful album `Àmr` by Ihsahn
