@@ -4,6 +4,9 @@ authors:
 - family-names: "Patil"
   given-names: "Akshay"
   orcid: "https://orcid.org/0000-0001-9807-0733"
+- family-names: "Garcia-Sanchez"
+  given-names: "Clara"
+  orcid: "https://orcid.org/0000-0002-5355-4272"
 title: "riskMap - An OpenFOAM utility to compute directionally averaged risk metrics for RANS simulations"
 version: 0.1.0
 doi: 10.5281/zenodo.11207890
