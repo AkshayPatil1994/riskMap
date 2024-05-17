@@ -28,7 +28,6 @@ volScalarField P_risk
     dimensionedScalar("P_risk", dimensionSet(0,0,0,0,0,0,0), 0.0)
 );
 
-// Define unitless scalar as Uavg (not important to have units here)
 volScalarField Uavg
 (
     IOobject

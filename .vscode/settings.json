@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "riskMap.C": "cpp",
+        "ostream": "cpp"
+    }
+}

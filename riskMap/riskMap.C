@@ -56,9 +56,7 @@ int main(int argc, char *argv[])
         #include "readWindRose.H"
         Info << "Size of the windrose.dat: " << windRoseData.size() << " items"<< nl << endl;
     }
-
     int totalIterations = 0;
-
     for (runTime; !runTime.end(); runTime++)
     {
         // Dump time information to screen
@@ -70,7 +68,6 @@ int main(int argc, char *argv[])
         // Increment the total number of iterations
         totalIterations = totalIterations + 1;       
     }
-
     // Now compute the average and divide it by the total number of samples
     Info << "Writing P_risk to file" << nl << endl;
     P_risk = P_risk/totalIterations;

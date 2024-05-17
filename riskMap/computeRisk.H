@@ -3,13 +3,12 @@ if(windRoseWeight.value() == 1)
 {
     multiplicationFactor  = windRoseData[totalIterations];
 }
-
+// Initialise the velocity magnitude
 volScalarField magU = mag(U);
 // Sum the Uavg
 Uavg = Uavg + multiplicationFactor*magU;
 // Sum the kavg
 kavg = kavg + multiplicationFactor*k;
-
 // Loop over all the elements and check if the value is larger than given parameters
 forAll(risk, cellID)
 {
@@ -25,6 +24,5 @@ forAll(risk, cellID)
 
 // Compute the sum
 P_risk = P_risk + risk;
-
 // Write the risk field to file
 risk.write();

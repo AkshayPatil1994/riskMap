@@ -6,7 +6,7 @@ This OpenFOAM utility computes a risk map using a non-dimensional velocity, alph
 
 ## How to compile?
 
-- Copy the `riskMap` directory to `$HOME/OpenFOAM/<user>-<version>/applications/utilities/`. Replace <user> with your username and <version> with your version name.
+- Copy the `riskMap` directory to `$HOME/OpenFOAM/<user>-<version>/applications/utilities/`. Replace `<user>` with your username and `<version>` with your version name.
 - Compile the application by typing `wmake`
 
 ## How to use the utility
