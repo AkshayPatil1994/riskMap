@@ -1,4 +1,6 @@
 # riskMap
+[![DOI](https://zenodo.org/badge/801667473.svg)](https://zenodo.org/doi/10.5281/zenodo.11207889)
+
 This OpenFOAM utility computes a risk map using a non-dimensional velocity, alpha, and beta input parameters 
 
 
